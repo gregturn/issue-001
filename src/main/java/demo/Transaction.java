@@ -34,12 +34,15 @@ public class Transaction {
 
 	private Date billingDate;
 
+	private String description;
+
 	protected Transaction() {}
 
-	public Transaction(Date date, Date billingDate) {
+	public Transaction(Date date, String description) {
 
 		this.date = date;
 		this.billingDate = date;
+		this.description = description;
 	}
 
 	public Integer getId() {
@@ -66,4 +69,11 @@ public class Transaction {
 		this.billingDate = billingDate;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

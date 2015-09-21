@@ -18,10 +18,12 @@ public class DemoApplication {
     @Bean
     CommandLineRunner runner(MyRepository repository) {
         return evt -> {
-            Date now = new Date(Calendar.getInstance().getTime().getTime());
-            repository.save(new Transaction(now, now));
-            repository.save(new Transaction(now, now));
-            repository.save(new Transaction(now, now));
+            Date first = new Date(Calendar.getInstance().getTime().getTime()-200000000);
+            Date second = new Date(Calendar.getInstance().getTime().getTime()-100000000);
+            Date third = new Date(Calendar.getInstance().getTime().getTime());
+            repository.save(new Transaction(first, "First"));
+            repository.save(new Transaction(second, "Second"));
+            repository.save(new Transaction(third, "Third"));
         };
     }
 
